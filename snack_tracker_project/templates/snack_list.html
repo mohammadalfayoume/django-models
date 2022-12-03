@@ -2,9 +2,13 @@
 
 {% block content %}
 <h1>Snacks list</h1>
-
+<!-- <button></button> -->
+<!-- <h3>{{object_list}}</h3> -->
 {% comment %} <h3>{{object_list}}</h3> {% endcomment %}
 {% for snack in object_list %}
-    <li>Name: {{ snack.name }}, Purchaser : {{ snack.purchaser }} Description: {{ snack.description }}</li>
+    <div>
+        <li><a href="{% url 'snack_details' snack.id %}">{{ snack.name }}</a></li>
+    </div>
+    
 {% endfor %}
 {% endblock content %}
